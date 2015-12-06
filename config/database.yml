@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: recruitment_task_dev
+  username: test
+  password: test
+
+test:
+  <<: *default
+  database: recruitment_task_test
+  username: test
+  password: test
+

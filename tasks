@@ -1,0 +1,31 @@
+- There are some failing tests in the suite. Make sure all tests are passing (change the code - not the tests!)
+
+- Go to developers list. Currently, only first name is shown for each developer. Make sure to display their full names (remember about each develper's show page).
+
+- Implement a simple voting system. Users should be able to vote for each project (and remove their vote later). User should be able to vote only once for each project. Vote number should be visible on the projects list.
+
+- Every project on the projects list should have its developer's full name displayed.
+
+- Go to developers list. There is projects count displayed for each developer. What's wrong? Can you do something about it? (Take a look at the logs)
+
+- Add avatars upload to developers.
+
+- For each developer on the developers list, display the created_at date with format 'DD/MM/YYYY'
+
+- Add Language model. Every project can use many languages. Add few test languages (you can do it in console or in the seeds file, you don't have to implement any form for that). Make sure you can choose languages while creating a new project. For each language, user should be able to display the list of projects using selected language.
+
+- Extra: Try to use Github public API to fetch some developers and projects. You can do it either as rake task or as a separate page - details are up to you, feel free to be creative with this task. Can you write some tests for this code?
+
+Tips:
+
+- You don't have to complete each task! Focus on quality rather than on number of completed tasks.
+- Don't worry too much about the look of the app. Focus on backend code.
+- There are some pieces of code that are not perfect. Can you fix / refactor the code?
+- Some gems that may be helpful: Draper, rest-client, will-paginate, CarrierWave.
+- There's a .rubocop.yml file included in the project.
+
+
+
+
+
+

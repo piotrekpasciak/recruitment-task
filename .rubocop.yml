@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - 'config/**/*'
+    - 'scoolerweb/**/*'
+    - 'test/test_helper.rb'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'Rakefile'
+    - 'spec/*_helper.rb'
+  RunRailsCops: true
+Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
