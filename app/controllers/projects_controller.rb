@@ -6,18 +6,24 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = developer.projects.build
+    @developer = Developer.find(params[:developer_id])
+    @project = @developer.projects.build
   end
 
   def create
-    @project = developer.projects.build(developer_params)
+    @developer = Developer.find(params[:developer_id])
+    @project = @developer.projects.build(project_params)
+
+    if @project.save
+      flash[:success] = 'Project saved'
+      redirect_to projects_path
+    else
+      flash[:danger] = 'Project could not be saved'
+      render :new
+    end
   end
 
   private
-
-  def developer
-    @developer ||= Developer.find(params[:developer_id])
-  end
 
   def project_params
     params.require(:project).permit(:name, :description)

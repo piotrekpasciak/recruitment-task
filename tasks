@@ -1,5 +1,7 @@
 - There are some failing tests in the suite. Make sure all tests are passing (change the code - not the tests!)
 
+- There is not flash messages displaying. Add it to the application layout.
+
 - Go to developers list. Currently, only first name is shown for each developer. Make sure to display their full names (remember about each develper's show page).
 
 - Implement a simple voting system. Users should be able to vote for each project (and remove their vote later). User should be able to vote only once for each project. Vote number should be visible on the projects list.
@@ -20,9 +22,11 @@ Tips:
 
 - You don't have to complete each task! Focus on quality rather than on number of completed tasks.
 - Don't worry too much about the look of the app. Focus on backend code.
-- There are some pieces of code that are not perfect. Can you fix / refactor the code?
+- There are some pieces of code that are not perfect. Can you improve the code?
 - Some gems that may be helpful: Draper, rest-client, will-paginate, CarrierWave.
-- There's a .rubocop.yml file included in the project.
+- You can use Rubocop to help you with style. If you do, there's a .rubocop.yml file to help you.
+- Using git is a huge plus. Keep your commit small and write meaninfull commit messages.
+- If you don't understand any of the tasks, don't hesitate to ask :)
 
 
 
