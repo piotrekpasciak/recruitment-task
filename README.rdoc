@@ -2,7 +2,7 @@
 
 = Instructions:
 
-1. Clone this repository with: git clone https://gitlab.besidethepark.com/beside-the-park/recruitment-task.git
+1. Clone this repository with: git clone https://gitlab.besidethepark.com/mkaszubowski/recruitment-task.git
 2. Run 'bundle install' command.
 3. Copy config/database.yml.default to config/database.yml and configure the database.
 4. Run 'bin/rake db:create' and 'bin/rake db:migrate' to setup your database.
