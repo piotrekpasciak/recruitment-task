@@ -11,3 +11,13 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore RubyMine files
+.idea
+
+# Ignore sensitive files
+config/database.yml
+config/secrets.yml
+
+
+
