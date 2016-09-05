@@ -5,7 +5,7 @@ RSpec.describe DevelopersController, type: :controller do
 
   context 'when user is not signed in' do
     it 'redirects to sign in form' do
-      expect(get :show, user: @user).to redirect_to new_user_session_path
+      expect(get(:show), user: @user).to redirect_to new_user_session_path
     end
   end
 

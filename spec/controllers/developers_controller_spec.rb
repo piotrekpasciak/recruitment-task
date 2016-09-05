@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe DevelopersController, type: :controller do
   context 'when user is not signed in' do
     it 'redirects to sign in form' do
-      expect(get :index).to redirect_to new_user_session_path
+      expect(get(:index)).to redirect_to new_user_session_path
     end
   end
 
@@ -18,7 +18,7 @@ RSpec.describe DevelopersController, type: :controller do
       before { 5.times { create(:developer) } }
 
       it 'loads all developers' do
-        get :index
+        get(:index)
         expect(assigns(:developers)).to eq Developer.all
       end
     end
