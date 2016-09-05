@@ -22,6 +22,7 @@ group :development, :test do
   gem 'spring'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'pry-rails', '~> 0.3.4'
 end
 
 group :development do
