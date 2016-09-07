@@ -19,5 +19,8 @@
 config/database.yml
 config/secrets.yml
 
+# Ignore file with environment variables
+.env
+
 
 
