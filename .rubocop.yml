@@ -7,9 +7,13 @@ AllCops:
     - 'bin/**/*'
     - 'Rakefile'
     - 'spec/*_helper.rb'
+    - 'app/helpers/devise_helper.rb'
 Rails:
   Enabled: true
 Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+LineLength:
+  Enabled: true
+  Max: 120

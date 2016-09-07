@@ -7,10 +7,36 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
-      %span Rectruitment Task
-      %ul
-        %li= link_to 'Developers', developers_path
-        %li= link_to 'Projects', projects_path
 
-    = yield
+    = flash_messages
+
+    %nav.Navigation.navbar.navbar-inverse
+      .container
+        .container-fluid
+          .navbar-header
+            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to 'Recruitment task', root_path, class: "Navigation-brand navbar-brand"
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li.active= link_to 'Developers', developers_path
+              %li= link_to 'Projects', projects_path
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                %span.Navigation-Span
+              - if user_signed_in?
+                %li= link_to 'Logout', destroy_user_session_path, method: :delete
+              - else
+                %li= link_to 'Login', new_user_session_path
+
+    %section
+      .container.Content
+        .Content-Inside
+          = yield
+
+    %footer.Footer
+      .container
+        %span.text-muted Created by me...
