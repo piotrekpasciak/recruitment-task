@@ -30,6 +30,7 @@ end
 
 group :development do
   gem 'rubocop', require: true
+  gem 'bullet', '~> 5.3'
 end
 
 group :test do
