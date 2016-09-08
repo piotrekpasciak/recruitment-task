@@ -17,6 +17,7 @@ gem 'haml-rails'
 
 gem 'omniauth-facebook', '~> 4.0'
 gem 'dotenv', '~> 2.1', '>= 2.1.1'
+gem 'draper', '~> 2.1'
 
 group :development, :test do
   gem 'byebug'
