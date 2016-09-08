@@ -23,6 +23,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'factory_girl_rails'
+  gem 'faker'
   gem 'pry-rails', '~> 0.3.4'
 end
 
@@ -33,5 +34,4 @@ end
 group :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara', '~> 2.8', '>= 2.8.1'
-  gem 'faker'
 end
