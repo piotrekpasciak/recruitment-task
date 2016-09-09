@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
       flash[:success] = 'Project saved'
       redirect_to projects_path
     else
-      flash[:danger] = 'Project could not be saved'
+      flash[:error] = 'Project could not be saved'
       render :new
     end
   end
