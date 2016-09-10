@@ -15,7 +15,7 @@ describe ProjectDecorator do
       expect(project.decorate.current_user_voted?).to be false
     end
 
-    it "returns true when current_user already voted" do
+    it 'returns true when current_user already voted' do
       create(:vote, project: project, user: user)
 
       expect(project.decorate.current_user_voted?).to be true
@@ -27,7 +27,7 @@ describe ProjectDecorator do
       expect(project.decorate.current_user_vote).to be_nil
     end
 
-    it "returns vote when current_user already voted" do
+    it 'returns vote when current_user already voted' do
       vote = create(:vote, project: project, user: user)
 
       expect(project.decorate.current_user_vote).to eql vote

@@ -7,7 +7,7 @@ class VotesController < ApplicationController
     vote = Vote.new(vote_params)
 
     if vote.save
-      flash[:success] = 'You have successfully voted project.'
+      flash[:success] = 'You have successfully added your vote.'
     else
       flash[:error] = "Vote couldn't be saved."
     end
