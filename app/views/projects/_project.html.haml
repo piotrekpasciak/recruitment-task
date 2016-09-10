@@ -6,6 +6,9 @@
     %label.Project-Label Description:
     = project.description
   %p
+    %label.Project-Label Developer:
+    = project.developer.decorate.full_name
+  %p
     %label.Project-Label Your vote:
     - if project.decorate.current_user_voted?
       = project.decorate.current_user_vote.value
