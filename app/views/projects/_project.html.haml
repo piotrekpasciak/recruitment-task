@@ -1,8 +1,30 @@
-.project
-  Name:
-  = project.name
-  %br/
-  Description
-  = project.description
-  %br/
-  Votes:
+.Project
+  %p
+    %label.Project-Label Name:
+    = project.name
+  %p
+    %label.Project-Label Description:
+    = project.description
+  %p
+    %label.Project-Label Your vote:
+    - if project.decorate.current_user_voted?
+      = project.decorate.current_user_vote.value
+    - else
+      None
+  %p
+    %label.Project-Label Average vote:
+    = project.decorate.avg_vote
+
+  .Project-Vote-Form
+    - unless project.decorate.current_user_voted?
+      = form_for :vote, url: developer_project_votes_path(project.developer, project) do |f|
+        %label Add your vote for project:
+        =f.select :value, options_for_select(1..6), {}, { class: 'form-control Project-Vote-Form-Select' }
+        =f.submit 'Add Vote', class: 'btn btn-success'
+    - else
+      = link_to "Delete Vote", vote_path(project.decorate.current_user_vote),
+        method: :delete, data: { confirm: 'Are you certain you want to delete this?' },
+        class: 'btn btn-danger'
+
+
+
