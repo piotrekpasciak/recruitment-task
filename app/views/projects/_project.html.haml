@@ -10,12 +10,13 @@
     = link_to project.developer.decorate.full_name, developer_path(project.developer)
   %p
     %label.Project-Label Your vote:
+
   %p
     %label.Project-Label Average vote:
     = project.decorate.avg_vote(project.votes_count, project.votes_avg)
 
   .Project-Vote-Form
-    - unless project.decorate.current_user_voted?(project.votes_count)
+    - unless project.decorate.current_user_voted?
       = form_for :vote, url: developer_project_votes_path(project.developer, project) do |f|
         %label Add your vote for project:
         =f.select :value, options_for_select(1..6), {}, { class: 'form-control Project-Vote-Form-Select' }
