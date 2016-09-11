@@ -7,7 +7,7 @@
     = project.description
   %p
     %label.Project-Label Developer:
-    = project.developer.decorate.full_name
+    = link_to project.developer.decorate.full_name, developer_path(project.developer)
   %p
     %label.Project-Label Your vote:
     - if project.decorate.current_user_voted?

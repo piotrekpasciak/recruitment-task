@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   has_many :votes
-  belongs_to :developer
+  belongs_to :developer, counter_cache: true
 
   validates :developer, presence: true
   validates :name, presence: true, uniqueness: { scope: :developer,
