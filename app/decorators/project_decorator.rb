@@ -1,12 +1,12 @@
 class ProjectDecorator < Draper::Decorator
   delegate_all
 
-  # N+1 query generating
+  # N+1 query generator
   def current_user_voted?
     votes.where(user: h.current_user).any?
   end
 
-  # N+1 query generating
+  # N+1 query generator
   def current_user_vote
     votes.find_by(user: h.current_user)
   end

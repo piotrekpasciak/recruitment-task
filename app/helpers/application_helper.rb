@@ -15,4 +15,8 @@ module ApplicationHelper
     end
     nil
   end
+
+  def developer_dropdown_active?
+    current_page?(developers_path) || current_page?(root_path) || current_page?(new_developer_path)
+  end
 end

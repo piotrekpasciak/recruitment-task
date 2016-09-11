@@ -10,7 +10,10 @@
     = link_to project.developer.decorate.full_name, developer_path(project.developer)
   %p
     %label.Project-Label Your vote:
-
+    - if project.decorate.current_user_voted?
+      = project.decorate.current_user_vote.value
+    - else
+      None
   %p
     %label.Project-Label Average vote:
     = project.decorate.avg_vote(project.votes_count, project.votes_avg)

@@ -22,15 +22,26 @@
             = link_to 'Recruitment task', root_path, class: "Navigation-brand navbar-brand"
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
             %ul.nav.navbar-nav
-              %li.active= link_to 'Developers', developers_path
-              %li= link_to 'Projects', projects_path
+              %li.dropdown{ class: ("active" if developer_dropdown_active?) }
+                %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  Developers
+                  %span.caret
+                %ul.dropdown-menu
+                  %li
+                    = link_to 'Index', developers_path
+                  %li
+                    = link_to 'New', new_developer_path
+              %li{ class: ("active" if current_page?(projects_path)) }
+                = link_to 'Projects', projects_path
+
             %ul.nav.navbar-nav.navbar-right
               %li
                 %span.Navigation-Span
               - if user_signed_in?
                 %li= link_to 'Logout', destroy_user_session_path, method: :delete
               - else
-                %li= link_to 'Login', new_user_session_path
+                %li{ class: ("active" if current_page?(new_user_session_path)) }
+                  = link_to 'Login', new_user_session_path
 
     %section
       .container.Content
