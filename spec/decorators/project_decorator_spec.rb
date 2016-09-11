@@ -36,14 +36,11 @@ describe ProjectDecorator do
 
   describe '#avg_vote' do
     it "returns 'None' when there are no votes yet" do
-      expect(project.decorate.avg_vote).to eql 'None'
+      expect(project.decorate.avg_vote(0, nil)).to eql 'None'
     end
 
-    it "return value in syntax '' when there are votes already" do
-      create(:vote, project: project, user: user, value: 5)
-      create(:vote, project: project, user: user2, value: 2)
-
-      expect(project.decorate.avg_vote).to eql '3.5 (Votes: 2)'
+    it "return value in syntax '=avg (Votes: =votes_number)' when there are votes already" do
+      expect(project.decorate.avg_vote(2, 3.5)).to eql '3.5 (Votes: 2)'
     end
   end
 end
