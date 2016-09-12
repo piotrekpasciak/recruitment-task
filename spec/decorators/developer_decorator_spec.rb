@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe DeveloperDecorator, focus: true do
+describe DeveloperDecorator do
   let(:developer) { create :developer, first_name: 'Zbyszek', last_name: 'Zbyszkowski',
                            created_at: 'Mon June 1 12:03:08 -0700 2016' }
 

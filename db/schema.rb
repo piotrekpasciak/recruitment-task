@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911232625) do
+ActiveRecord::Schema.define(version: 20160912044711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20160911232625) do
     t.string   "avatar"
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -34,6 +40,16 @@ ActiveRecord::Schema.define(version: 20160911232625) do
   end
 
   add_index "projects", ["developer_id"], name: "index_projects_on_developer_id", using: :btree
+
+  create_table "projects_languages", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "language_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "projects_languages", ["language_id"], name: "index_projects_languages_on_language_id", using: :btree
+  add_index "projects_languages", ["project_id"], name: "index_projects_languages_on_project_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -67,6 +83,8 @@ ActiveRecord::Schema.define(version: 20160911232625) do
   add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
 
   add_foreign_key "projects", "developers"
+  add_foreign_key "projects_languages", "languages"
+  add_foreign_key "projects_languages", "projects"
   add_foreign_key "votes", "projects"
   add_foreign_key "votes", "users"
 end
