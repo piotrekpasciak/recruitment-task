@@ -1,6 +1,8 @@
 %h1 New developer
 
-= simple_form_for @developer do |f|
-  = f.input :first_name
-  = f.input :last_name
-  = f.submit :save
+.Resource-Form
+  = simple_form_for @developer do |f|
+    = f.input :first_name, input_html: { class: "form-control" }
+    = f.input :last_name, input_html: { class: "form-control" }
+    = f.input :avatar, as: :file, input_html: { class: "Resource-Form-File" }
+    = f.submit "Create Developer", class: "btn btn-primary"

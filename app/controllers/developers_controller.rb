@@ -20,7 +20,7 @@ class DevelopersController < ApplicationController
       flash[:success] = 'Developer saved'
       redirect_to developers_path
     else
-      flash[:danger] = 'Developer could not be saved'
+      flash[:error] = 'Developer could not be saved'
       render :new
     end
   end
@@ -28,6 +28,6 @@ class DevelopersController < ApplicationController
   private
 
   def developer_params
-    params.require(:developer).permit(:first_name, :last_name)
+    params.require(:developer).permit(:first_name, :last_name, :avatar)
   end
 end

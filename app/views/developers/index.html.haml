@@ -6,11 +6,20 @@
 
 %h2 All developers
 - @developers.each do |developer|
-  .developer
-    = link_to developer.decorate.full_name, developer_path(developer)
-    %br/
-    Project count:
-    = developer.projects_count
-    %br/
-    Joined at:
+  .Developer.col-sm-6
+    .Developer-Left
+      - if developer.avatar.to_s.empty?
+        .Developer-Empty-Image
+          %span.Developer-Empty-Image-Text No Avatar
+      - else
+        = image_tag developer.avatar.to_s, class: "Developer-Image"
+
+    .Developer-Right
+      = link_to developer.decorate.full_name, developer_path(developer), class: "Developer-Name"
+      %br/
+
+      Project count:
+      = developer.projects_count
+      %br/
+      Joined at:
 
