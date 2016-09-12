@@ -17,10 +17,10 @@ class DevelopersController < ApplicationController
     @developer = Developer.new(developer_params)
 
     if @developer.save
-      flash[:success] = 'Developer saved'
+      flash[:success] = 'Developer saved.'
       redirect_to developers_path
     else
-      flash[:error] = 'Developer could not be saved'
+      flash[:error] = 'Developer could not be saved.'
       render :new
     end
   end
