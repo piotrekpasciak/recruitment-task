@@ -3,11 +3,11 @@ class ProjectsController < ApplicationController
   before_action :set_developer, only: [:new, :create]
 
   def index
-    if params[:language]
-      @projects = Project.includes(:developer, :languages).where(languages: { name: params[:language] })
-    else
-      @projects = Project.includes(:developer, :languages)
-    end
+    @projects = if params[:language].nil?
+                  Project.includes(:developer, :languages)
+                else
+                  Project.includes(:developer, :languages).where(languages: { name: params[:language] })
+                end
   end
 
   def new
