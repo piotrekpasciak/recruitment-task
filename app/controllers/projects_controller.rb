@@ -8,17 +8,16 @@ class ProjectsController < ApplicationController
 
   def new
     @project = @developer.projects.build
-    @languages = Language.all
   end
 
   def create
     @project = @developer.projects.build(project_params)
 
     if @project.save
-      flash[:success] = 'Project saved'
+      flash[:success] = 'Project saved.'
       redirect_to developer_path(@developer)
     else
-      flash[:error] = 'Project could not be saved'
+      flash[:error] = 'Project could not be saved.'
       render :new
     end
   end
