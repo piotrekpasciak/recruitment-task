@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:index]
   resources :votes, only: [:destroy]
+  resources :languages, only: [:index, :destroy]
 
   root 'developers#index'
 end

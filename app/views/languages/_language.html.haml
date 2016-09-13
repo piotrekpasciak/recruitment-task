@@ -1,0 +1,11 @@
+%tr
+  %th.Language-Cell= language.name
+
+  %th.Language-Cell-Button= link_to 'Destroy language', language_path(language), method: :delete,
+                                                                          data: { confirm: "Are you sure you want to delete this?" },
+                                                                          class: 'btn btn-danger'
+
+
+
+
+

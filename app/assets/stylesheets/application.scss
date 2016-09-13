@@ -222,4 +222,25 @@ body {
 .User {
   width: 500px;
   min-width: 500px;
+
+  &-Cell {
+    vertical-align: middle !important;
+  }
+
+  &-Cell-Button {
+    text-align: center;
+  }
+}
+
+.Language {
+  width: 300px;
+  min-width: 300px;
+
+  &-Cell {
+    vertical-align: middle !important;
+  }
+
+  &-Cell-Button {
+    text-align: center;
+  }
 }

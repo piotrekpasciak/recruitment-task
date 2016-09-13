@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def authorize?
+  def authorize!
     redirect_to root_path unless current_user.try(:admin?)
   end
 end
