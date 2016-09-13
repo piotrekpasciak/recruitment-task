@@ -11,7 +11,11 @@ class ProjectDecorator < Draper::Decorator
     votes.find_by(user: h.current_user)
   end
 
-  def avg_vote(count, average)
+  # N+1 query generator
+  def avg_vote
+    count = votes.count
+    average = votes.average(:value)
+
     if average.nil?
       'None'
     else

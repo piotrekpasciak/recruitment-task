@@ -3,7 +3,11 @@ class ProjectsController < ApplicationController
   before_action :set_developer, only: [:new, :create]
 
   def index
-    @projects = Project.count_and_average_votes.includes(:developer, :languages)
+    if params[:language]
+      @projects = Project.includes(:developer, :languages).where(languages: { name: params[:language] })
+    else
+      @projects = Project.includes(:developer, :languages)
+    end
   end
 
   def new

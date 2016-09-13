@@ -3,6 +3,12 @@ class DevelopersController < ApplicationController
 
   def show
     @developer = Developer.find(params[:id])
+
+    if params[:language]
+      @projects = @developer.projects.includes(:languages).where(languages: { name: params[:language] })
+    else
+      @projects = @developer.projects.includes(:languages)
+    end
   end
 
   def index

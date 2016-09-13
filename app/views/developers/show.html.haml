@@ -1,6 +1,12 @@
 %h1= @developer.decorate.full_name
 = link_to 'Add Project', new_developer_project_path(@developer)
 
+%h2 Filter by language
+.Language-Buttons
+  =link_to 'None', developer_path(@developer), class: 'btn btn-primary'
+  - Language.all.each do |l|
+    = link_to l.name, developer_path(@developer, language: l.name), class: 'btn btn-success'
+
 .projects
   %h2 Projects
-  = render @developer.projects.count_and_average_votes.includes(:languages)
+  = render @projects
