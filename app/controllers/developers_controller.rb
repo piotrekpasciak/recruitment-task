@@ -5,9 +5,9 @@ class DevelopersController < ApplicationController
     @developer = Developer.find(params[:id])
 
     @projects = if params[:language].nil?
-                  @projects = @developer.projects.includes(:languages)
+                  @developer.projects.includes(:languages)
                 else
-                  @projects = @developer.projects.includes(:languages).where(languages: { name: params[:language] })
+                  @developer.projects.includes(:languages).where(languages: { name: params[:language] })
                 end
   end
 
