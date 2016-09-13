@@ -22,11 +22,13 @@ gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'mini_magick', '~> 4.5'
 gem 'will_paginate', '~> 3.1'
 
+# Added in all environments to be able to seed data on production
+gem 'faker'
+
 group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'pry-rails', '~> 0.3.4'
 end
 
