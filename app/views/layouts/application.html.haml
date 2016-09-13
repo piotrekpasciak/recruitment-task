@@ -33,11 +33,15 @@
                     = link_to 'New', new_developer_path
               %li{ class: ("active" if current_page?(projects_path)) }
                 = link_to 'Projects', projects_path
+              %li{ class: ("active" if current_page?(users_path)) }
+                - if admin?
+                  = link_to 'Users', users_path
 
             %ul.nav.navbar-nav.navbar-right
               %li
                 %span.Navigation-Span
               - if user_signed_in?
+                %li.navbar-text= current_user.email
                 %li= link_to 'Logout', destroy_user_session_path, method: :delete
               - else
                 %li{ class: ("active" if current_page?(new_user_session_path)) }

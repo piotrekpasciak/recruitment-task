@@ -1,0 +1,12 @@
+%h1 All users
+
+%table.table.table-bordered.table-striped.User
+  %thead
+    %tr
+      %th.resource-name Name
+      %th Role
+      %th.resouce-link Destroy
+
+  %tbody
+    = render @users
+

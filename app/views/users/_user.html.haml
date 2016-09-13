@@ -1,0 +1,12 @@
+%tr
+  %th= user.email
+  %th= user.decorate.role
+  - if user.admin
+    %th
+  - else
+    %th= link_to 'Destroy User', user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete this?" }, class: 'btn btn-danger'
+
+
+
+
+
