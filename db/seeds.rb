@@ -1,4 +1,4 @@
-DEVELOPER_FIRST_NAMES = %w(Michał Paweł Piotrek Zbigniew Marek Radosław)
+DEVELOPER_FIRST_NAMES = %w(Michał Paweł Piotrek Zbigniew Marek Radosław Zbyszek Kamil Stefan)
 DEVELOPER_LAST_NAMES = %w(Grabowski Nowicki Adamczyk Dudek Król Jabłoński Wieczorek Jaworski Wróbel)
 
 5.times do

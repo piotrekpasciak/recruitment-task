@@ -6,3 +6,6 @@
     = link_to l.name, projects_path(language: l.name), class: 'btn btn-success'
 
 = render @projects
+
+.apple_pagination
+  = will_paginate @projects

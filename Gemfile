@@ -20,6 +20,7 @@ gem 'dotenv', '~> 2.1'
 gem 'draper', '~> 2.1'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'mini_magick', '~> 4.5'
+gem 'will_paginate', '~> 3.1'
 
 group :development, :test do
   gem 'byebug'
