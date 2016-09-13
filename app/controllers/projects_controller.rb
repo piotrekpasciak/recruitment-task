@@ -5,10 +5,11 @@ class ProjectsController < ApplicationController
   def index
     @projects = if params[:language].nil?
                   Project.includes(:developer, :languages).order('projects.created_at DESC')
-                                                          .paginate(page: params[:page] , per_page: 5)
+                                                          .paginate(page: params[:page], per_page: 5)
                 else
-                  Project.includes(:developer, :languages).where(languages: { name: params[:language] }).order('projects.created_at DESC')
-                                                          .paginate(page: params[:page] , per_page: 5)
+                  Project.includes(:developer, :languages).where(languages: { name: params[:language] })
+                                                          .order('projects.created_at DESC')
+                                                          .paginate(page: params[:page], per_page: 5)
                 end
   end
 

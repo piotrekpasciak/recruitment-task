@@ -6,11 +6,11 @@ class DevelopersController < ApplicationController
 
     @projects = if params[:language].nil?
                   @developer.projects.includes(:languages).order('projects.created_at DESC')
-                                                          .paginate(page: params[:page] , per_page: 5)
+                                                          .paginate(page: params[:page], per_page: 5)
                 else
                   @developer.projects.includes(:languages).where(languages: { name: params[:language] })
                                                           .order('projects.created_at DESC')
-                                                          .paginate(page: params[:page] , per_page: 5)
+                                                          .paginate(page: params[:page], per_page: 5)
                 end
   end
 
