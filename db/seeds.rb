@@ -13,3 +13,15 @@ developer = Developer.all
                   description: Faker::Lorem.paragraph,
                   developer: developer.sample)
 end
+
+Language.create!(name: 'English')
+Language.create!(name: 'Spanish')
+Language.create!(name: 'Polish')
+Language.create!(name: 'German')
+
+projects = Project.all
+languages = Language.all
+
+projects.each do |project|
+  ProjectsLanguage.create!(project: project, language: languages.sample )
+end

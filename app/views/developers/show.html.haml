@@ -1,5 +1,6 @@
 %h1= @developer.decorate.full_name
+= link_to 'Add Project', new_developer_project_path(@developer)
 
 .projects
   %h2 Projects
-  = render @developer.projects.count_and_average_votes
+  = render @developer.projects.count_and_average_votes.includes(:languages)

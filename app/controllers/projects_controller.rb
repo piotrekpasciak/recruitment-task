@@ -3,11 +3,12 @@ class ProjectsController < ApplicationController
   before_action :set_developer, only: [:new, :create]
 
   def index
-    @projects = Project.count_and_average_votes.includes(:developer)
+    @projects = Project.count_and_average_votes.includes(:developer, :languages)
   end
 
   def new
     @project = @developer.projects.build
+    @languages = Language.all
   end
 
   def create
@@ -15,7 +16,7 @@ class ProjectsController < ApplicationController
 
     if @project.save
       flash[:success] = 'Project saved'
-      redirect_to projects_path
+      redirect_to developer_path(@developer)
     else
       flash[:error] = 'Project could not be saved'
       render :new
@@ -29,6 +30,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description)
+    params.require(:project).permit(:name, :description, language_ids: [])
   end
 end

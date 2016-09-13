@@ -1,6 +1,9 @@
-%h1 New project
+%h1 New project for #{ @developer.decorate.full_name }
 
-= simple_form_for [@developer, @project] do |f|
-  = f.input :name
-  = f.input :description
-  = f.submit :save
+.Resource-Form
+  = simple_form_for [@developer, @project] do |f|
+    = f.input :name, input_html: { class: "form-control" }
+    = f.input :description, input_html: { class: "form-control Resource-Form-Textarea" }
+    %label.text Languages
+    = f.collection_check_boxes :language_ids, @languages, :id, :name, item_wrapper_class: 'Resource-Form-Checkbox'
+    = f.submit "Create Project", class: "btn btn-primary"

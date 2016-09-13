@@ -17,6 +17,11 @@
   %p
     %label.Project-Label Average vote:
     = project.decorate.avg_vote(project.votes_count, project.votes_avg)
+  %p
+    %label.Project-Label Languages:
+    %ul
+    - project.languages.each do |l|
+      %li= l.name
 
   .Project-Vote-Form
     - unless project.decorate.current_user_voted?

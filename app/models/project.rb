@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
   has_many :votes
+  has_many :projects_languages
   has_many :languages, through: :projects_languages
+
   belongs_to :developer, counter_cache: true
 
   validates :developer, presence: true
