@@ -219,12 +219,12 @@ body {
   }
 }
 
-.User {
-  width: 500px;
-  min-width: 500px;
+.Table {
+  font-size: 14px;
 
   &-Cell {
     vertical-align: middle !important;
+    font-weight: normal;
   }
 
   &-Cell-Button {
@@ -232,15 +232,12 @@ body {
   }
 }
 
+.User {
+  width: 500px;
+  min-width: 500px;
+}
+
 .Language {
   width: 300px;
   min-width: 300px;
-
-  &-Cell {
-    vertical-align: middle !important;
-  }
-
-  &-Cell-Button {
-    text-align: center;
-  }
 }
