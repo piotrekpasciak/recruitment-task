@@ -4,9 +4,9 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = if params[:language].nil?
-                  Project.includes(:developer, :languages)
+                  Project.includes(:developer, :languages).order('projects.created_at DESC')
                 else
-                  Project.includes(:developer, :languages).where(languages: { name: params[:language] })
+                  Project.includes(:developer, :languages).where(languages: { name: params[:language] }).order('projects.created_at DESC')
                 end
   end
 

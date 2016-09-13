@@ -5,9 +5,9 @@ class DevelopersController < ApplicationController
     @developer = Developer.find(params[:id])
 
     @projects = if params[:language].nil?
-                  @developer.projects.includes(:languages)
+                  @developer.projects.includes(:languages).order('projects.created_at DESC')
                 else
-                  @developer.projects.includes(:languages).where(languages: { name: params[:language] })
+                  @developer.projects.includes(:languages).where(languages: { name: params[:language] }).order('projects.created_at DESC')
                 end
   end
 
