@@ -1,11 +1,6 @@
-/*
- *= require bootstrap
- *= require variables
- *= require apple_pagination
- *= require_self
- */
-
-$light-gray: #ddd;
+@import 'bootstrap';
+@import 'variables';
+@import 'apple_pagination';
 
 * {
   margin: 0;
@@ -96,6 +91,10 @@ body {
 
   &-Actions {
     margin: 20px 0;
+  }
+
+  &-Checkbox {
+    margin-left: 20px;
   }
 }
 
